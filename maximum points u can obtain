@@ -1,0 +1,12 @@
+class Solution(object):
+    def maxScore(self, cardPoints, k):
+        l=0
+        total=sum(cardPoints[len(cardPoints)-k:])
+        res=total
+        for r in range(len(cardPoints)-k,len(cardPoints)):
+            total+=cardPoints[l]-cardPoints[r]
+            l += 1
+            res=max(res,total)
+        return res
+
+        
